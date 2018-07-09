@@ -4,15 +4,22 @@ import ListItem from './listItem.js';
 const AddItem = (props) => {
     return (
       <div className="container">
-        <form>
-          <label for="quantity">Quantity</label>
-          <input type="number" max="50" name="Quantity"></input>
-          <label for="type">Type</label>
-          <select>
-            {props.type.map(item => <ListItem name={item.name}/>
-            )}
-          </select>
-        </form>
+        <div className="row">
+          <form onSubmit={props.onSubmit}>
+            <label for="quantity">Quantity</label>
+            <input type="number" max="50" name="quantity"
+              onChange={props.onChange}></input>
+            <label htmlFor="type">Type</label>
+            <select name="name" onChange={props.onChange}>
+              {props.type.map(item =>
+                <ListItem
+                key={item.id}
+                name={item.name}/>
+              )}
+            </select>
+            <button>Submit</button>
+          </form>
+        </div>
       </div>
     );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListItem = (props) => {
   return (
-    <option>{props.name}</option>
+    <option>{props.name }</option>
   )
 }
 
